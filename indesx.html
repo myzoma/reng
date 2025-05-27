@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة اكتشاف الأنماط الفنية للعملات الرقمية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- واجهة الفلاتر أعلى الصفحة -->
+    <header>
+        <h1>استراتيجية اكتشاف الأنماط الفنية الكلاسيكية</h1>
+        <div class="filters">
+            <label>الاطار الزمني:
+                <select id="timeframe">
+                    <option value="1d">يومي</option>
+                    <option value="1h">1 ساعة</option>
+                    <option value="3h">3 ساعات</option>
+                    <option value="4h">4 ساعات</option>
+                </select>
+            </label>
+            <label>فرز حسب النموذج:
+                <select id="patternFilter">
+                    <option value="all">الكل</option>
+                    <option value="Double Bottom">القاع الثنائي</option>
+                    <option value="Triple Top">القمة الثلاثية</option>
+                    <option value="Triple Bottom">القاع الثلاثي</option>
+                    <option value="Head & Shoulders">الرأس والكتفين</option>
+                    <option value="Inverted Head & Shoulders">الرأس والكتفين المقلوب</option>
+                    <option value="Symmetrical Triangle">المثلث المتماثل</option>
+                    <option value="Ascending Triangle">المثلث الصاعد</option>
+                    <option value="Descending Triangle">المثلث الهابط</option>
+                    <option value="Boarding Pattern">النموذج المتباعد</option>
+                    <option value="Rectangle">المستطيل</option>
+                    <option value="Flags & Pennants">الأعلام والأعلام المثلثة</option>
+                    <option value="Rising Wedge">الوتد الصاعد</option>
+                    <option value="Falling Wedge">الوتد الهابط</option>
+                    <option value="Rounding Tops">القمم المستديرة</option>
+                    <option value="Rounding Bottoms">القيعان المستديرة</option>
+                    <option value="V Top Pattern">القمة V</option>
+                    <option value="V Bottom Pattern">القاع V</option>
+                </select>
+            </label>
+        </div>
+    </header>
+    <!-- شبكة البطاقات الرئيسية -->
+    <main>
+        <div id="cardsGrid" class="cards-grid">
+            <!-- يتم ملء البطاقات ديناميكيا من JS -->
+        </div>
+    </main>
+    <!-- نافذة منبثقة لتفاصيل النموذج -->
+    <div id="patternModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <div id="modalDetails">
+                <!-- تفاصيل النموذج تظهر هنا -->
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
