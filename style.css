@@ -1,0 +1,300 @@
+/* إعدادات عامة للصفحة */
+body {
+    background: #181a20;
+    color: #eee;
+    font-family: 'Tajawal', 'Cairo', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+header {
+    padding: 32px 0 16px 0;
+    text-align: center;
+    background: transparent;
+}
+
+header h1 {
+    margin: 0 0 16px 0;
+    font-size: 2.1rem;
+    letter-spacing: 1px;
+    color: #f2b705;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 16px;
+}
+
+.filters label {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.filters select {
+    background: #23262f;
+    color: #fff;
+    border: 1px solid #23262f;
+    border-radius: 12px;
+    padding: 6px 16px;
+    font-size: 1rem;
+    margin-right: 8px;
+    outline: none;
+    transition: border 0.2s;
+}
+.filters select:focus {
+    border: 1.5px solid #f2b705;
+}
+
+/* شبكة البطاقات */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    padding: 32px 4vw 64px 4vw;
+}
+
+@media (max-width: 1100px) {
+    .cards-grid { grid-template-columns: repeat(2, 1fr);}
+}
+@media (max-width: 700px) {
+    .cards-grid { grid-template-columns: 1fr;}
+}
+
+/* بطاقة العملة */
+.card {
+    background: #22242d;
+    border-radius: 20px;
+    box-shadow: 0 2px 20px 0 #0004;
+    padding: 20px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    min-height: 260px;
+}
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px 0 #f2b70533, 0 2px 16px #0007;
+}
+
+/* شعار العملة */
+.card .coin-logo {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #181a20;
+    color: #f2b705;
+    font-size: 2.1rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px #0007;
+    border: 2.5px solid #f2b70555;
+}
+
+/* اسم العملة */
+.card .coin-name {
+    font-size: 1.13rem;
+    font-weight: 700;
+    color: #f2b705;
+    margin-bottom: 3px;
+    letter-spacing: 1px;
+}
+
+/* سعر العملة */
+.card .price-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 7px;
+}
+.card .coin-price {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #fff;
+}
+.card .price-change {
+    font-size: .92rem;
+    font-weight: 700;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+}
+.price-up { color: #15d269; }
+.price-down { color: #ff4444; }
+.price-arrow {
+    margin-left: 3px;
+    font-size: 1.08em;
+}
+
+/* حجم السيولة */
+.card .liquidity-row {
+    width: 100%;
+    margin-bottom: 6px;
+}
+.card .liquidity-bar-bg {
+    width: 100%;
+    background: #181a20;
+    border-radius: 10px;
+    height: 12px;
+    overflow: hidden;
+    margin-bottom: 2px;
+}
+.card .liquidity-bar {
+    background: linear-gradient(90deg,#f2b705,#15d269 90%);
+    height: 100%;
+    border-radius: 10px;
+    transition: width .6s;
+}
+.card .liquidity-val {
+    font-size: .94rem;
+    color: #d7d7d7;
+    font-weight: 700;
+    margin-top: 1px;
+}
+
+/* حجم التداول */
+.card .volume-row {
+    font-size: .98rem;
+    color: #8ad7fa;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+/* اسم النموذج */
+.card .pattern-row {
+    margin-top: 12px;
+    font-size: 1.03rem;
+    color: #f2b705;
+    background: #191c24;
+    padding: 5px 13px;
+    border-radius: 9px;
+    font-weight: 700;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 1px 7px #0005;
+}
+
+.card .no-pattern {
+    color: #aaa;
+    background: #22242d;
+    font-weight: 600;
+}
+
+.pattern-status {
+    font-size: .92rem;
+    font-weight: 700;
+    margin-right: 8px;
+    padding: 2px 7px;
+    border-radius: 13px;
+    background: #23262f;
+    color: #fff;
+    border: 1.5px solid #f2b705;
+}
+
+/* نافذة التفاصيل المنبثقة */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0; top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000b;
+    justify-content: center;
+    align-items: center;
+}
+.modal.active {
+    display: flex;
+}
+.modal-content {
+    background: #23262f;
+    border-radius: 18px;
+    padding: 32px 28px 24px 28px;
+    box-shadow: 0 8px 32px #f2b70533, 0 2px 16px #0008;
+    min-width: 340px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    color: #fff;
+    position: relative;
+    animation: fadeInModal .25s ease;
+}
+@keyframes fadeInModal {
+    from {transform: scale(.7); opacity: .2;}
+    to {transform: scale(1); opacity: 1;}
+}
+.close-btn {
+    position: absolute;
+    left: 18px; top: 16px;
+    font-size: 2.1rem;
+    color: #f2b705;
+    cursor: pointer;
+    font-weight: 900;
+    transition: color .22s;
+}
+.close-btn:hover {
+    color: #ff4444;
+}
+
+/* تفاصيل النافذة المنبثقة */
+#modalDetails h2 {
+    color: #f2b705;
+    margin-bottom: 14px;
+}
+#modalDetails .pattern-info-row {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+#modalDetails .pattern-info-row span {
+    color: #f2b705;
+    margin-right: 6px;
+    font-weight: 600;
+}
+#modalDetails .targets {
+    margin-top: 18px;
+    background: #191c24;
+    border-radius: 12px;
+    padding: 12px 14px;
+}
+#modalDetails .targets h3 {
+    color: #15d269;
+    font-size: 1.03em;
+    margin: 0 0 7px 0;
+}
+#modalDetails .target-row {
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+#modalDetails .target-row span {
+    color: #fff;
+    font-weight: 600;
+    margin-left: 6px;
+}
+#modalDetails .target-status {
+    display: inline-block;
+    padding: 1px 7px;
+    border-radius: 9px;
+    background: #23262f;
+    color: #fff;
+    font-size: .93em;
+    margin-right: 9px;
+}
+
+/* أزرار وفلاتر إضافية */
+::-webkit-scrollbar { width: 9px; background: #23262f;}
+::-webkit-scrollbar-thumb { background: #2c2f39; border-radius: 10px;}
+::-webkit-scrollbar-thumb:hover { background: #f2b70533;}
+
+/* خطوط عربية احترافية (اختياري) */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
